@@ -75,6 +75,7 @@
     <msvcSslLibs>libssl.lib;libcrypto.lib</msvcSslLibs>
     <strip.skip>false</strip.skip>
     <generatedSourcesDir>${project.build.directory}/generated-sources</generatedSourcesDir>
+    <os.detected.classifier>linux-armhf</os.detected.classifier>
   </properties>
 
   <build>
@@ -87,11 +88,11 @@
 
     <extensions>
       <!-- Generate os.detected.classifier property -->
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.4.0.Final</version>
-      </extension>
+      <!--<extension>-->
+        <!--<groupId>kr.motd.maven</groupId>-->
+        <!--<artifactId>os-maven-plugin</artifactId>-->
+        <!--<version>1.4.0.Final</version>-->
+      <!--</extension>-->
     </extensions>
 
     <pluginManagement>

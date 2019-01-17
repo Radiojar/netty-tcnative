@@ -102,6 +102,11 @@
               <forceAutogen>${forceAutogen}</forceAutogen>
               <forceConfigure>${forceConfigure}</forceConfigure>
               <windowsBuildTool>msbuild</windowsBuildTool>
+              <configureArgs>
+                <configureArg>CC=arm-linux-gnueabihf-gcc</configureArg>
+                <configureArg>CFLAGS=-mcpu=cortex-a53 -mfpu=neon-vfpv4</configureArg>
+                <configureArg>--host=arm-linux</configureArg>
+              </configureArgs>
             </configuration>
             <goals>
               <goal>generate</goal>
