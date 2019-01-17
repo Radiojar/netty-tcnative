@@ -49,16 +49,17 @@
     <nativeLibOnlyDir>${project.build.directory}/native-lib-only</nativeLibOnlyDir>
     <nativeJarWorkdir>${project.build.directory}/native-jar-work</nativeJarWorkdir>
     <maven-hawtjni-plugin-version>1.11</maven-hawtjni-plugin-version>
+    <os.detected.classifier>linux-armhf</os.detected.classifier>
   </properties>
 
   <build>
     <extensions>
       <!-- Generate os.detected.classifier property -->
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.4.0.Final</version>
-      </extension>
+      <!--<extension>-->
+        <!--<groupId>kr.motd.maven</groupId>-->
+        <!--<artifactId>os-maven-plugin</artifactId>-->
+        <!--<version>1.4.0.Final</version>-->
+      <!--</extension>-->
     </extensions>
 
     <resources>
@@ -115,6 +116,11 @@
               <forceAutogen>${forceAutogen}</forceAutogen>
               <forceConfigure>${forceConfigure}</forceConfigure>
               <windowsBuildTool>msbuild</windowsBuildTool>
+              <configureArgs>
+                <configureArg>CC=arm-linux-gnueabihf-gcc</configureArg>
+                <configureArg>CFLAGS=-mcpu=cortex-a53 -mfpu=neon-vfpv4</configureArg>
+                <configureArg>--host=arm-linux</configureArg>
+              </configureArgs>
             </configuration>
             <goals>
               <goal>generate</goal>
